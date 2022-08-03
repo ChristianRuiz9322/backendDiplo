@@ -1,0 +1,305 @@
+body{
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+h2{
+    color: #d40a4d7c;
+    font: 400;
+}
+
+header{
+    background-color: #df27647c;
+    padding: 10px 0;
+}
+
+header h1{
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+    font-style: italic;
+    display: inline-block;
+    position: relative;
+    bottom: 5px;
+    margin-left: 15px;
+}
+
+nav{
+    background-color: #f878e37c;
+    margin-bottom: 20px;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li{
+    flex-grow: 1;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    padding: 3px 6px;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav ul li a.activo{
+    background-color: #d61eb87c;
+}
+
+.holder{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.bienvenidos{
+    width: 75%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.bienvenidos p{
+    font-weight: 500;
+    color: #666;
+}
+
+.cont-img{
+    display: flex;
+    justify-content: center;
+}
+
+.imgmain{
+    width: 458px;
+    border-radius: 10px;
+}
+
+.testimonios{
+    width: 25%;
+    flex-direction: column-reverse;
+    position: relative;
+    display: flex;
+}
+
+.columnas{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.bienvenidos p{
+    font: 20px;
+}
+
+.testimonio{
+    background-color: rgba(228, 228, 228, 0.562);
+    padding: 16px;
+    display: block;
+}
+
+.testimonio .cita{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+    color: #8009317c;
+    margin: 10px;
+}
+
+.testimonio .autor{
+    font-size: 10px;
+    color: #8009317c;
+    text-align: center;
+    margin: 10px;
+    float: right;
+}
+
+/* Hasta aquí el home */
+/* Aquí Nosotros */
+
+.historia p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+}
+
+.personas{
+    display: flex;
+    justify-content: space-between;
+}
+
+.persona{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 18%;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+    padding: 13px;
+    box-sizing: border-box;
+}
+
+.persona img{
+    border-radius: 50%;
+    max-width: 60%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.persona h5,
+.persona h6{
+    margin: 0;
+    font-weight: normal;
+    color: 2e64a1;
+}
+
+.persona h5{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.persona h6{
+    font-size: 11px;
+    font-style: italic;
+}
+
+.persona p{
+    color: #666;
+    font-size: 10px;
+}
+
+/* Hasta aqui nosotros
+Desde aqui servicios */
+
+.servicio{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 16px 0;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.servicio .info h4{
+    color: #740329e7;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    border-bottom: 1px solid #490119e1;
+    padding-bottom: 10px;
+}
+
+.servicio .info p{
+    font-size: 13px;
+}
+
+.servicio img{
+    border-radius: 13px;
+    display: block;
+    max-width: 225px;
+}
+
+.servicio:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+/* aqui termina servicio
+aqui empieza galeria */
+
+.galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.galeria img{
+    width: 31%;
+    border: 1px solid #ddd;
+    padding: 0.3em;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-right: 2%;
+}
+
+/* Aqui termina galeria
+aqui comienza novedades */
+
+.novedades{
+    font-weight: 500;
+    color: #666;
+}
+
+
+/* Aquí termina novedades
+aqui comienza contacto */
+
+.contacto{
+    display: flex;
+    gap: 24px;
+    font-weight: 500;
+    color: #666;
+}
+
+.contacto div{
+    width: 100%;
+}
+
+.datos p{
+    font-size: 14px;
+}
+
+.datos ul li{
+    font-size: 13px;
+}
+
+.formulario p{
+    display: flex;
+}
+
+.formulario p label{
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.formulario p:nth-child(4) {
+    align-items: start;
+}
+
+.formulario textarea{
+    resize: none;
+    height: 150px;
+}
+
+.formulario input[type="submit"] {
+    background-color: #680325d2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 16px;
+    padding: 6px 20px;
+    width: auto;
+    position: relative;
+    left: 5rem;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #df27647c;
+}
+
+footer{
+    background-color: #df27647c;
+    clear: both;
+    font-weight: 500;
+    color: #8009317c;
+    text-align: center;
+    padding: 5px 0;
+    margin-top: 20px;
+}
