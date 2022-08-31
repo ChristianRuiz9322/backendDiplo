@@ -13,18 +13,18 @@ router.get('/', async function (req, res, next) {
     novedades = novedades.map(novedad => {
         if (novedad.img_id) {
             const imagen = cloudinary.image(novedad.img_id, {
-                width: 100,
-                height: 100,
+                width: 200,
+                height: 200,
                 crop: 'fill'
             });
             return {
                 ...novedad,
                 imagen
             }
-        }else{
+        } else {
             return {
-            ...novedad,
-            imagen: ''
+                ...novedad,
+                imagen: ''
             }
         }
     });
@@ -42,7 +42,7 @@ router.get('/agregar', (req, res, next) => {
 });
 
 router.get('/eliminar/:id', async (req, res, next) => {
-    var id = req. params.id;
+    var id = req.params.id;
 
     let novedad = await novedadesModel.getNovedadesById(id);
     if (novedad.img_id){
@@ -53,6 +53,8 @@ router.get('/eliminar/:id', async (req, res, next) => {
     res.redirect('/admin/novedades')
 });
 
+//estoy en el diseño, voy al controlador, el controlador al modelo, el modelo devuelve y cuando termina redirecciona a novedades
+
 router.get('/modificar/:id', async (req, res, next) => {
     let id = req.params.id;
     let novedad = await novedadesModel.getNovedadesById(id);
@@ -62,10 +64,11 @@ router.get('/modificar/:id', async (req, res, next) => {
     });
 });
 
+//trabajamos con un post porque viene desde un formulario
 router.post('/agregar', async (req, res, next) => {
     try {
         var img_id = '';
-        console.log(req.files.imagen);
+        //console.log(req.files.imagen);
 
         if (req.files && Object.keys(req.files).length > 0) {
             imagen = req.files.imagen;
@@ -78,11 +81,12 @@ router.post('/agregar', async (req, res, next) => {
                 ...req.body, //spread > titulo, subtitulo, cuerpo
                 img_id
             });
-            res.redirect('/admin/novedades')
+            res.redirect('/admin/novedades')  //cuando se redirecciona no se usa render 
         } else {
             res.render('admin/agregar', {
                 layout: 'admin/layout', 
-                error: true, message: 'Todos los campos son requeridos'
+                error: true, 
+                 message: 'Todos los campos son requeridos'    //nos tiene que avisarque por algun motivo no se cargaron todos los datos o hubo un error con alguno de los campos
             })
         }
     } catch (error) {
@@ -115,7 +119,8 @@ router.post('/modificar', async (req, res, next) => {
         let obj = {
             titulo: req.body.titulo,
             subtitulo: req.body.subtitulo,
-            cuerpo: req.body.cuerpo, img_id
+            cuerpo: req.body.cuerpo, 
+            img_id
         }
         await novedadesModel.modificarNovedadesById(obj, req.body.id);
         res.redirect('/admin/novedades');
@@ -124,7 +129,8 @@ router.post('/modificar', async (req, res, next) => {
         console.log(error)
         res.render('admin/modificar', {
             layout: '/admin/layout',
-            error: true, message: 'No se modificó la novedad'
+            error: true, 
+            message: 'No se modificó la novedad'
         })
     }
 });
